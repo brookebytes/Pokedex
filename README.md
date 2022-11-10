@@ -2,6 +2,7 @@
 A Pokemon inspired Pokedex that allows you to search for a Pokemon and view facts about them, such as their number, type, height and weight.
 
 **Link to project:** https://brookebytes.github.io/Pokedex
+![alt tag](pokedex_screenshot.jpg)
 
 ## How It's Made:
 
