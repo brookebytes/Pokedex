@@ -14,6 +14,8 @@ body {
   color: gray;
   background-image: url('../img/pokemap.jpg');
   background-size: cover;
+   /* background: linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.15)),
+    url('../img/pokemap.jpg');  */
 }
 
 h1 {
@@ -483,7 +485,7 @@ input, button {
 /******************************************
 /* MEDIA QUERIES
 /*******************************************/
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 699px) {
   .pokedex {
     flex-direction: column;
     align-items: center;
@@ -579,4 +581,34 @@ input, button {
     margin-bottom: 15%;
     border-left: 3pt solid black;
   }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+
+  .pokedexLeftPanel {
+    width: 325px;
+  }
+
+  .pokedexRightPanel {
+    width: 295px;
+    height: 403px;
+  }
+
+  .cross{
+    margin-left: 18%;
+    height: 50px;
+    width: 15px;
+  }
+
+  .cross:after {
+    height: 12px;
+    left: -19px;
+    top: 15px;
+    width: 50px;
+  }
+
+  .middleBar > div:first-of-type {
+    height: 94px;
+}
+
 }
