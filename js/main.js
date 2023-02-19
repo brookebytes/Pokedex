@@ -60,31 +60,25 @@ function displayDataScreen2(data){
 }
 
 
-function getFetch(){
+async function getFetch(){
   document.querySelector('p').innerText = "";
   const pokeChoice = document.querySelector('input').value.toLowerCase();
   console.log("pokeChoice = " + pokeChoice);
   if (pokeChoice == "") return;
   const url = 'https://pokeapi.co/api/v2/pokemon/'+pokeChoice
 
-  fetch(url)
-      .then(res => res.json()) // parse response as JSON
-      .then(data => {
-        console.log(data)
-
-        //display data
-        displayDataScreen1(data);
-        displayDataScreen2(data);
-
-        //turn screens on
-        powerOn();
-
-      })
-      .catch(err => {
-          console.log(`error ${err}`);
-          document.querySelector('p').innerText = "ERROR";
-          powerOff();
-          resetData();
-      });
+  try {
+    const res = await fetch(url);
+    const data = await res.json()
+    console.log(data);
+    displayDataScreen1(data);
+    displayDataScreen2(data);
+    powerOn();
+  } catch (e) {
+    console.log(`error ${e}`);
+    document.querySelector('p').innerText = "ERROR";
+    powerOff();
+    resetData();
+  }
 }
 
